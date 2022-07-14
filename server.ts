@@ -13,13 +13,15 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.get('/', (req, res) => {
+app.get('/get-request', (req, res) => {
     res.send(true);
 });
 
 app.post('/post-request', (req, res) => {
     let body = req.body;
-    console.log(body);
+    res.send({postRequestResponse: 'This is the POST response'});
 });
 
-app.listen(PORT, () => {console.log('Serve started on port ' + PORT)});
+var server = app.listen(PORT, () => {console.log('Serve started on port ' + PORT)});
+export default server;
+
