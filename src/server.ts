@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get('/get-request', (req, res) => {
-    res.send(true);
+    res.send({response: true});
 });
 
 app.post('/post-request', (req, res) => {
