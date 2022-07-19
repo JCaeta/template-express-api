@@ -1,9 +1,9 @@
-const express = require('express');
-const cors = require('cors');
-var bodyParser = require('body-parser');
+import express from 'express';
+import cors from 'cors';
+import bodyParser from 'body-parser';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 app.use(cors({
     origin: "http://localhost:PORT"
 }));
@@ -11,6 +11,7 @@ app.use(cors({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
+
 }));
 
 app.get('/get-request', (req, res) => {
